@@ -3,5 +3,7 @@
         "Botao",
         "obrigatorio",
         "opcoes"
-    ]
+    ],
+    "files.encoding": "utf8"
 }
+    

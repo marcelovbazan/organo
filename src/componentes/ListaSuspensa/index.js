@@ -11,7 +11,7 @@ const ListaSuspensa = (props) => {
                 {props.label}
             </label>
             <select required={props.obrigatorio} onChange={aoDigitado} value={props.valor}>
-                <option value="">Selecione uma opção</option>
+                <option value="">Selecione uma opÃ§Ã£o</option>
                 {props.opcoes.map((opcao, index) => (
                     <option key={opcao}>{opcao}</option>
                 ))}

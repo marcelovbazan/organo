@@ -34,7 +34,7 @@ function App() {
       corSecundaria: '#FFF5D9',
     },
     {
-      nome: 'InovaÁ„o e Gest„o',
+      nome: 'Inova√ß√£o e Gest√£o',
       corPrimaria: '#FF8A29',
       corSecundaria: '#FFEEDF',
     }
