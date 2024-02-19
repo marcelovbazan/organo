@@ -10,20 +10,24 @@ const Time = (props) => {
         borderColor: props.corPrimaria
     }
     return (
-        (props.colaboradores.length>0) ? <section className="time" style={css_corSecundaria}>
+        (props.colaboradores.length > 0) ? <section className="time" style={css_corSecundaria}>
             <h3 style={css_corPrimaria} >{props.nome}</h3>
             <div className="colaboradores">
-            {props.colaboradores.map(colaborador =>
-                <Colaborador
-                corDeFundo={props.corPrimaria}
-                    key={colaborador.nome}
-                    nome={colaborador.nome}
-                    imagem={colaborador.imagem}
-                    cargo={colaborador.cargo} /> 
-            )}
+                {props.colaboradores.map((colaborador, indice) => {
+                    return <Colaborador
+                                corDeFundo={props.corPrimaria}
+                                key={colaborador.indice}
+                                nome={colaborador.nome}
+                                imagem={colaborador.imagem}
+                                cargo={colaborador.cargo} 
+                                aoDeletar={props.aoDeletar}
+                        
+                        />
+                }
+                )}
             </div>
         </section>
-        :''
+            : ''
     )
 }
 
