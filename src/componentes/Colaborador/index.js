@@ -1,17 +1,17 @@
 import "./Colaborador.css"
 import { IoMdCloseCircle } from "react-icons/io";
 
-const Colaborador = (props) => {
-    var corSecundaria = { backgroundColor: props.corDeFundo }
+const Colaborador = ({aoDeletar,colaborador,corDeFundo}) => {
+    var corSecundaria = { backgroundColor: corDeFundo }
     return (
         <section className="colaborador">
-            <IoMdCloseCircle  size={25} className="deletar" onClick={props.aoDeletar} />
+            <IoMdCloseCircle  size={25} className="deletar" onClick={aoDeletar} />
                         <div class='cabecalho' style={corSecundaria}>
-                <img src={props.imagem} alt={props.nome} />
+                <img src={colaborador.imagem} alt={colaborador.nome} />
             </div>
             <div className='rodape'>
-                <h4>{props.nome} </h4>
-                <h5>{props.cargo}</h5>
+                <h4>{colaborador.nome} </h4>
+                <h5>{colaborador.cargo}</h5>
             </div>
 
         </section>
