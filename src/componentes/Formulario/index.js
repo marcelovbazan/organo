@@ -1,8 +1,9 @@
 import Botao from "../Botao";
 import CampoTexto from "../CampoTexto/CampoTexto";
 import ListaSuspensa from "../ListaSuspensa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Formulario.css";
+import { v4 as uuidv4 } from 'uuid';
 
 const Formulario = (props) => {
 
@@ -12,13 +13,29 @@ const Formulario = (props) => {
     const [imagem, setImagem] = useState("");
     const [time, setTime] = useState("");
 
+    useEffect(() => {
+        if (props.colaboradorEditado) {
+            setNome(props.colaboradorEditado.nome);
+            setCargo(props.colaboradorEditado.cargo);
+            setImagem(props.colaboradorEditado.imagem);
+            setTime(props.colaboradorEditado.time);
+        } else {
+            setNome('');
+            setCargo('');
+            setImagem('');
+            setTime('');
+        }
+    }, [props.colaboradorEditado]);
+
+
     const aoSalvar = (evento) => {
         evento.preventDefault();
         props.aoColaboradorCadastrado({
             nome,
             cargo,
             imagem,
-            time
+            time,
+            id: uuidv4()
         })
         setNome('')
         setCargo('')
